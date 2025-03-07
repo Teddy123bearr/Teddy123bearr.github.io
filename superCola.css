@@ -20,7 +20,7 @@ body {
 
 @font-face {
   font-family: "dast Navis";
-  src: url("danstevis/danstevis.otf") format("truetype");
+  src: url("./danstevis.otf") format("truetype");
 }
 
 .scroller {
