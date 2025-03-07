@@ -135,14 +135,14 @@ ScrollTrigger.create({
   },
 });
 
-ScrollTrigger.create({
-  trigger: ".information",
-  pin: ".hero-image",
-  start: "top bottom",
-  end: "top top",
-  scroller: ".scroller",
-  scrub: true,
-});
+// ScrollTrigger.create({
+//   trigger: ".information",
+//   pin: ".hero-image",
+//   start: "top bottom",
+//   end: "top top",
+//   scroller: ".scroller",
+//   scrub: true,
+// });
 
 //tweens
 
