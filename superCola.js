@@ -1,38 +1,40 @@
 "use strict";
 
-function show() {
-  gsap.registerPlugin(ScrollTrigger);
-  const locoScroll = new LocomotiveScroll({
-    el: document.querySelector(".scroller"),
-    smooth: true,
-  });
-  locoScroll.on("scroll", ScrollTrigger.update);
-  ScrollTrigger.scrollerProxy(".scroller", {
-    scrollTop(value) {
-      return arguments.length
-        ? locoScroll.scrollTo(value, 0, 0)
-        : locoScroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    },
-    pinType: document.querySelector(".scroller").style.transform
-      ? "transform"
-      : "fixed",
-  });
+// function show() {
+//   gsap.registerPlugin(ScrollTrigger);
+//   const locoScroll = new LocomotiveScroll({
+//     el: document.querySelector(".scroller"),
+//     smooth: true,
+//   });
+//   locoScroll.on("scroll", ScrollTrigger.update);
+//   ScrollTrigger.scrollerProxy(".scroller", {
+//     scrollTop(value) {
+//       return arguments.length
+//         ? locoScroll.scrollTo(value, 0, 0)
+//         : locoScroll.scroll.instance.scroll.y;
+//     },
+//     getBoundingClientRect() {
+//       return {
+//         top: 0,
+//         left: 0,
+//         width: window.innerWidth,
+//         height: window.innerHeight,
+//       };
+//     },
+//     pinType: document.querySelector(".scroller").style.transform
+//       ? "transform"
+//       : "fixed",
+//   });
 
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-  ScrollTrigger.refresh();
-}
+//   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+//   ScrollTrigger.refresh();
+// }
 
-show();
+// show();
 
 //values
+
+gsap.registerPlugin(ScrollTrigger);
 
 let leftInit = parseFloat(
   getComputedStyle(document.querySelector(".hero-image")).getPropertyValue(
@@ -110,7 +112,7 @@ ScrollTrigger.create({
   trigger: "body",
   pin: ".navbar",
   start: "top top",
-  scroller: ".scroller",
+  // scroller: ".scroller",
   end: "bottom bottom",
   scrub: true,
 });
@@ -119,7 +121,7 @@ ScrollTrigger.create({
   trigger: ".information",
   pin: ".hero",
   start: "1% bottom",
-  scroller: ".scroller",
+  // scroller: ".scroller",
   end: "top 40%",
   scrub: true,
 
