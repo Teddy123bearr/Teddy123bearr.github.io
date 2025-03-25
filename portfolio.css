@@ -182,9 +182,10 @@ body {
 
 .button-container {
   flex-basis: calc(100% - (60% + 20% + 4rem));
-
+width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .button {
