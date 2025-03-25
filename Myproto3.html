@@ -1,0 +1,283 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artistic Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poetsen+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Base Styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Playfair Display", serif;
+        background: linear-gradient(45deg, #f3e7e9, #e3eeff);
+      }
+
+      /* Main Container */
+      .main-container {
+        width: 100%;
+        height: 600vh;
+        position: relative;
+      }
+
+      /* Page Containers */
+      .page-container {
+        width: 100%;
+        height: 150vh;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        position: sticky;
+        top: 0;
+        padding: 2rem;
+        filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
+      }
+
+      .page {
+        width: 90%;
+        height: 90vh;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 2rem;
+        transition: transform 0.3s ease;
+        display: grid;
+        grid-template-rows: auto 1fr;
+      }
+
+      /* Color Animations */
+      .pinkContainer {
+        background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+      }
+      .greenContainer {
+        background: linear-gradient(45deg, #a8e6cf, #dcedc1);
+      }
+      .blueContainer {
+        background: linear-gradient(45deg, #84fab0, #8fd3f4);
+      }
+      .purpleContainer {
+        background: linear-gradient(45deg, #a18cd1, #fbc2eb);
+      }
+
+      /* Content Styles */
+      .content {
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Interactive Elements */
+      .portfolio-item {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Typography */
+      .gradient-text {
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-family: "Poetsen One", cursive;
+      }
+
+      /* Scroll Animations */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .floating-element {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      /* Contact Form */
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: #4ecdc4;
+        outline: none;
+        box-shadow: 0 0 10px rgba(78, 205, 196, 0.2);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .page {
+          width: 95%;
+          height: 85vh;
+        }
+        .main-container {
+          height: 800vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Home Section -->
+      <div class="page-container pinkContainer">
+        <div class="page pink">
+          <div class="content">
+            <h1 class="gradient-text" style="font-size: 4rem">
+              Creative Portfolio
+            </h1>
+            <div class="floating-element">
+              <img
+                src="https://via.placeholder.com/400"
+                alt="Profile"
+                style="border-radius: 50%; width: 250px; margin: 2rem 0"
+              />
+            </div>
+            <p style="font-size: 1.5rem; color: #666">
+              Digital Artist & Frontend Developer
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Section -->
+      <div class="page-container greenContainer">
+        <div class="page green">
+          <div class="content">
+            <h2 class="gradient-text">Recent Works</h2>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+                margin-top: 2rem;
+              "
+            >
+              <div class="portfolio-item">
+                <h3>Digital Painting</h3>
+                <p>Abstract color exploration</p>
+              </div>
+              <div class="portfolio-item">
+                <h3>Web Design</h3>
+                <p>Interactive experiences</p>
+              </div>
+              <div class="portfolio-item">
+                <h3>Graphic design</h3>
+                <p>Character design</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Section -->
+      <div class="page-container blueContainer">
+        <div class="page blue">
+          <div class="content">
+            <h2 class="gradient-text">Skills & Expertise</h2>
+            <div
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-top: 2rem;
+              "
+            >
+              <div
+                class="skill-bar"
+                style="
+                  width: 80%;
+                  height: 20px;
+                  background: #eee;
+                  border-radius: 10px;
+                "
+              >
+                <div
+                  class="skill-fill"
+                  style="
+                    width: 90%;
+                    height: 100%;
+                    background: #4ecdc4;
+                    border-radius: 10px;
+                  "
+                ></div>
+              </div>
+              <!-- Add more skill bars -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="page-container purpleContainer">
+        <div class="page purple">
+          <div class="content">
+            <h2 class="gradient-text">Get in Touch</h2>
+            <form
+              class="contact-form"
+              style="max-width: 500px; margin: 2rem auto"
+            >
+              <input type="text" placeholder="Name" />
+              <input type="email" placeholder="Email" />
+              <textarea rows="5" placeholder="Message"></textarea>
+              <button
+                style="
+                  background: #4ecdc4;
+                  color: white;
+                  padding: 1rem 2rem;
+                  border: none;
+                  border-radius: 8px;
+                  cursor: pointer;
+                "
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Scroll animations
+      window.addEventListener("scroll", () => {
+        const scrolled = window.pageYOffset;
+        document.documentElement.style.setProperty("--scroll", scrolled);
+      });
+
+      // Interactive elements
+      document.querySelectorAll(".portfolio-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
