@@ -184,7 +184,6 @@ body {
   flex-basis: calc(100% - (60% + 20% + 4rem));
   width: 100%;
   display: flex;
-  border: solid 2px grey;
   align-items: center;
   justify-content: center;
 }
