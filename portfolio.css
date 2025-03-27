@@ -97,7 +97,7 @@ body {
 }
 
 .pink .content {
-  transform-style: preserve-3d;
+ 
   border: 1px rgb(211, 178, 189) dotted;
   position: absolute;
   backface-visibility: hidden;
